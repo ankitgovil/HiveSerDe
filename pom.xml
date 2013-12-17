@@ -9,20 +9,12 @@
       <url>http://repo1.maven.org/maven2/</url>
     </repository>
   </repositories>
-  
-  
+
   <build>
-    <sourceDirectory>src</sourceDirectory>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.0</version>
-        <configuration>
-          <source/>
-          <target/>
-        </configuration>
-      </plugin>
-    </plugins>
+    <directory>target</directory>
+    <outputDirectory>target/classes</outputDirectory>
+    <finalName>${project.artifactId}-${project.version}</finalName>
+    <sourceDirectory>src/main/java</sourceDirectory>
   </build>
   
   <dependencies>
@@ -35,7 +27,7 @@
   	<dependency>
 	<groupId>org.apache.hive</groupId>
 	<artifactId>hive-serde</artifactId>
-	<version>0.11.0</version>
+	<version>0.12.0</version>
 </dependency>
             
  	<dependency>

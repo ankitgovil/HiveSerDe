@@ -73,7 +73,7 @@ import org.codehaus.jackson.map.ObjectMapper;
  * Only STRING keys are supported for Hive MAPs.
  */
 public class JSONSerDe implements SerDe {
-  
+  private static ObjectMapper mapper = new ObjectMapper();
   private StructTypeInfo rowTypeInfo;
   private ObjectInspector rowOI;
   private List<String> colNames;
@@ -118,7 +118,6 @@ public class JSONSerDe implements SerDe {
     Map<?,?> root = null;
     row.clear();
     try {
-      ObjectMapper mapper = new ObjectMapper();
       // This is really a Map<String, Object>. For more information about how
       // Jackson parses JSON in this example, see
       // http://wiki.fasterxml.com/JacksonDataBinding
